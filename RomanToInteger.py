@@ -55,47 +55,40 @@ class Solution:
             print('s contains illegal characters')
             return 0
         
-        i = ans = 0
-        while i<length:
-            j = i+1
-            if j >= length:
-                j = i
+        ans = 0
+        for i in range(0,length):
             match s[i]:
                 case 'I':
-                    if s[j] == 'V':
-                        ans += 4
-                        i += 1
-                    elif s[j] == 'X':
-                        ans += 9
-                        i += 1
-                    else:
-                        ans += 1
+                    ans += 1
                 case 'V':
                     ans += 5
                 case 'X':
-                    if s[j] == 'L':
-                        ans += 40
-                        i += 1
-                    elif s[j] == 'C':
-                        ans += 90
-                        i += 1
-                    else:
-                        ans += 10
+                    ans += 10
                 case 'L':
                     ans += 50
                 case 'C':
-                    if s[j] == 'D':
-                        ans += 400
-                        i += 1
-                    elif s[j] == 'M':
-                        ans += 900
-                        i += 1
-                    else:
-                        ans += 100
+                    ans += 100
                 case 'D':
                     ans += 500
                 case 'M':
                     ans += 1000
+        # print('ans=',ans)
+        i = 0
+        while i < (length-1):
+            nows = s[i]
+            nexts = s[i+1]
+            if( nows == 'I' ):
+                if (nexts == 'V') | (nexts == 'X'):
+                    ans -=2
+                    i +=1
+            elif( nows == 'X' ):
+                if (nexts == 'L') | (nexts == 'C'):
+                    ans -= 20
+                    i +=1
+            elif( nows == 'C' ):
+                if (nexts == 'D') | (nexts == 'M'):
+                    ans -= 200
+                    i +=1
             i+=1
         return ans
     
