@@ -97,9 +97,6 @@ class Solution:
                 case 'M':
                     ans += 1000
             i+=1
-        if ans > 3999:
-            print('roman over 3999')
-            return 0
         return ans
     
 sol = Solution()
