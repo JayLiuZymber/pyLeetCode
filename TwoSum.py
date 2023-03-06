@@ -52,7 +52,7 @@ class Solution:
     
 sol = Solution()
 print(sol.twoSum([1], 1))
-print(sol.twoSum([1,1], 2))
+print(sol.twoSum([range(1,10**9+1)], 2))
 print(sol.twoSum([-10**9-1, 10**9], 3))
 print(sol.twoSum([10**9+1, -10**9], 4))
 print(sol.twoSum([1,2,3,4], 5))
