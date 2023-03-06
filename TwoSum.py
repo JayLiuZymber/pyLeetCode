@@ -40,9 +40,9 @@ class Solution:
         if( (target < -10**9) | (target > 10**9)):
             print('target < -10**9 or target > 10**9')
             return []
-        for i in nums:
-            x = nums.index(i)
+        for x in range(0, len(nums)-1):
             # print('x=', x)
+            i = nums[x]
             for y in range(x+1, len(nums)):
                 # print('y=', y)
                 j = nums[y]
